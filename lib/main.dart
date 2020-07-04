@@ -71,12 +71,14 @@ class _MyAppState extends State<MyApp> {
             backgroundColor: Hexcolor('#6c5ce7'),
             elevation: 10,
           ),
-          body: _questionIndex < _questions.length
-              ? Quiz(
-                  questions: _questions,
-                  questionIndex: _questionIndex,
-                  answerQuestion: _answerQuestion)
-              : Result(_totalScore, _resetQuiz)),
+          body: Container(
+              child: _questionIndex < _questions.length
+                  ? Quiz(
+                      questions: _questions,
+                      questionIndex: _questionIndex,
+                      answerQuestion: _answerQuestion)
+                  : Result(_totalScore, _resetQuiz),
+              color: Hexcolor('#6c5ce7'))),
     );
   }
 }
